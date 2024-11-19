@@ -61,6 +61,7 @@ body {
 /*home*/
 
 .home {
+    margin-top: 0px;
     position: relative;
     width: 100%;
     justify-content: space-between;
@@ -187,18 +188,17 @@ body {
     margin-left: 3.5%;
 }
 
-/*about*/
-
+/* about */
 .about {
-    background-color:#081B29;
+    background-color: #081B29;
     display: grid;
-    grid-template-columns: repeat(2, .5fr);
-    /*align-items: center;*/
-    /*gap: 1.5rem;*/
+    grid-template-columns: repeat(2, 0.5fr);
     width: 100%;
     justify-content: space-between;
     min-height: 100vh;
     padding: 70px 5% 0;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards; /* Add fade-in animation */
 }
 
 .about-img {
@@ -208,11 +208,16 @@ body {
     background-size: cover;
     padding-right: 10%;
     margin-top: 2.5%;
-    /*margin-top: 7.5%;*/
-  
-   
+    transform: translateX(-50px);
+    opacity: 0;
+    animation: slideIn 1s forwards 0.5s; /* Add slide-in animation with delay */
 }
-.about-img img:hover{
+
+.about-img img {
+    transition: transform 1s ease, box-shadow 0.3s ease;
+}
+
+.about-img img:hover {
     transform: scale(1.1);
     box-shadow: 0 0 5pc cyan, 0 0 5px cyan, 0 0 10px cyan;
 }
@@ -230,6 +235,8 @@ body {
 
 .about-text {
     margin-right: 2%;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards 0.5s; /* Fade-in with delay */
 }
 
 .about-text h2 {
@@ -262,23 +269,115 @@ body {
     letter-spacing: 1px;
     text-decoration: none;
     font-weight: 600;
+    opacity: 0;
+    animation: fadeIn 1.5s forwards 1s; /* Fade-in button with delay */
 }
 
 .abtbtn-box:hover {
     box-shadow: 0 0 5px cyan, 0 0 25px cyan, 0 0 50pc cyan, 0 0 100px cyan, 0 0 200px cyan;
 }
 
+/* Animation Keyframes */
 
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Slide-in animation */
+@keyframes slideIn {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Media Queries for Responsiveness */
+
+/* Small Devices (Tablets, 768px and below) */
+@media (max-width: 768px) {
+    .about {
+        grid-template-columns: 1fr; /* Stacks the layout */
+        padding: 70px 3% 0; /* Adjust padding for small screens */
+        top: 10px;
+    }
+
+    .about-text h2 {
+        font-size: 40px; 
+        letter-spacing: 2px; /* Reduce the font size for smaller screens */
+    }
+
+    .about-text p {
+        font-size: 20px; /* Adjust paragraph font size */
+        line-height: 1.8; /* Reduce line height for better readability */
+        word-spacing: 1.5px; /* Increase word spacing */
+        margin-bottom: 2rem; /* Adjust margin for smaller screens */
+    }  
+
+    .abt-res {
+        max-width: 100%; /* Make image responsive */
+        max-height: 300px; /* Adjust max height for smaller screens */
+        margin-top: 20px;
+    }
+
+    .abtbtn-box {
+        padding: 10px 20px; /* Reduce padding of the button */
+        font-size: 14px; /* Adjust font size of button */
+    }
+}
+
+/* Extra Small Devices (Phones, 480px and below) */
+@media (max-width: 480px) {
+    .about-text h2 {
+        font-size: 30px; /* Further reduce font size */
+        letter-spacing: 2px; /* Tighten letter spacing */
+    }
+
+    .about-text p {
+        font-size: 14px; /* Reduce font size */
+        margin-bottom: 2rem; /* Adjust margin for smaller screens */
+        
+    }
+
+    .abtbtn-box {
+        padding: 8px 16px; /* Reduce padding for small screens */
+        font-size: 12px; /* Make button text smaller */
+    }
+
+    .abt-res {
+        max-height: 250px; /* Further adjust image size */
+        margin-top: 15px;
+    }
+
+    .about-img {
+        margin-top: 5%; /* Adjust image top margin */
+        padding-right: 0; /* Remove extra padding */
+    }
+
+    .about-text {
+        margin-right: 0; /* Remove margin on small screens */
+        padding: 0 10px; /* Add some padding to the text section */
+    }
+}
 /* Skills */
-#Skills{
+#Skills {
     background-color: #081B29;
 }
+
 .subtitle {
     text-align: center;
     font-size: 60px;
     padding-bottom: 10px;
     padding-top: 70px;
-    
 }
 
 .subtitle span {
@@ -289,24 +388,14 @@ body {
     display: flex;
     flex-wrap: wrap;
     padding-bottom: 0px;
-    
 }
 
-.container1 {
-    width: 600px;
-    max-height: 500px;
-    padding: 10px;
-    margin-left: 100px;
-}
+.container1,
 .container2 {
-   
     width: 600px;
     max-height: 500px;
     padding: 10px;
-    margin-left: 500px;
-    
-
-    
+    margin: 20px;
 }
 
 .heading1 {
@@ -316,7 +405,6 @@ body {
     text-underline-offset: 5px;
     text-decoration-thickness: 5px;
     margin-bottom: 0px;
-   
 }
 
 .bar {
@@ -443,7 +531,6 @@ body {
     justify-content: space-evenly;
     align-items: flex-start;
     position:relative;
-    
 }
 
 .radial-bars .radial-bar {
@@ -520,6 +607,98 @@ body {
     font-weight: 500;
     animation: showText 0.5s 1s linear forwards;
     opacity: 0;
+}
+
+/* Media Queries for Responsiveness */
+
+/* Small Devices (Tablets, 768px and below) */
+@media (max-width: 768px) {
+    .sec {
+        flex-direction: column; /* Stack the sections vertically on smaller screens */
+        padding: 20px;
+    }
+
+    .container1, .container2 {
+        width: 100%; /* Full width on smaller devices */
+        margin: 20px 0; /* Adjust margin for better spacing */
+    }
+
+    .heading1 {
+        font-size: 25px; /* Smaller heading size */
+    }
+
+    .bar {
+        font-size: 18px; /* Adjust bar font size */
+    }
+
+    .progress-line span::after {
+        font-size: 11px; /* Adjust percentage text size */
+    }
+
+    .radial-bars .radial-bar {
+        width: 40%; /* Reduce the width of radial bars */
+        height: 150px; /* Adjust height */
+    }
+
+    .radial-bars .radial-bar svg {
+        width: 100px;
+        height: 140px;
+    }
+
+    .radial-bar .percentage {
+        font-size: 14px; /* Adjust font size */
+    }
+
+    .radial-bar .text {
+        font-size: 14px; /* Adjust text size */
+    }
+}
+
+/* Extra Small Devices (Phones, 480px and below) */
+@media (max-width: 480px) {
+    .sec {
+        flex-direction: column; /* Stack the sections vertically */
+        padding: 10px;
+    }
+
+    .container1, .container2 {
+        width: 100%;
+        margin: 10px 0;
+    }
+
+    .heading1 {
+        font-size: 20px; /* Smaller heading font size */
+    }
+
+    .bar {
+        font-size: 16px; /* Smaller font size for bars */
+    }
+
+    .progress-line.html span::after,
+    .progress-line.css span::after,
+    .progress-line.python span::after,
+    .progress-line.java span::after,
+    .progress-line.cpls span::after {
+        font-size: 10px; /* Smaller percentage font size */
+    }
+
+    .radial-bars .radial-bar {
+        width: 40%; /* Further reduce width for mobile */
+        height: 120px;
+    }
+
+    .radial-bars .radial-bar svg {
+        width: 90px;
+        height: 120px;
+    }
+
+    .radial-bar .percentage {
+        font-size: 12px; /* Further adjust percentage font size */
+    }
+
+    .radial-bar .text {
+        font-size: 12px; /* Further adjust text size */
+    }
 }
 
 /*projects*/
