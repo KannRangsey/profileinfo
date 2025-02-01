@@ -371,6 +371,7 @@ body {
 /* Skills */
 #Skills {
     background-color: #081B29;
+   
 }
 
 .subtitle {
@@ -396,6 +397,7 @@ body {
     max-height: 500px;
     padding: 10px;
     margin: 20px;
+    margin-left: 120px;
 }
 
 .heading1 {
@@ -865,10 +867,10 @@ body {
     width: 100%;
     height: 100%;
 }
-.prj-list div:hover {
+/* .prj-list div:hover {
     background: #0ef;
     transform: translateY(-10px);
-}
+} */
 .container {
     padding: 50px;
 
@@ -1622,3 +1624,49 @@ input .send:hover {
     color: #0ef;
    
 }
+.upload-container {
+      background: #ffffff;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      width: 300px;
+    }
+
+    .upload-container h2 {
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    .upload-container input[type="file"] {
+      display: none;
+    }
+
+    .upload-container label {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: #fff;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .upload-container label:hover {
+      background-color: #0056b3;
+    }
+
+    .upload-container button {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #28a745;
+      color: #fff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .upload-container button:hover {
+      background-color: #218838;
+    }
