@@ -12,6 +12,7 @@
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://unpkg.com/typed.js@2.0.15/dist/typed.umd.js"></script>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
+  
 </head>
 
 <body>
@@ -49,16 +50,20 @@
 
                             <body>
                                 <header class="header">
-
-                                    <a href="#" class="logo">Porfileinfo</a>
+                                    <div class="menu-icon" id="menu-icon">
+                                        <i class="bx bx-menu"></i>
+                                    </div>
+                                    <div class="logo">
+                                        <a href="#" class="logo"><i class='bx bx-user'></i> Porfileinfo</a>
+                                    </div>
                                     <nav class="navbar" id="myLinks">
-                                        <a href="#Home" style="--i:1" class="active">Home</a>
-                                        <a href="#About" style="--i:2">About</a>
-                                        <a href="#Skills" style="--i:3">Skills</a>
-                                        <a href="#Projects" style="--i:4">Projects</a>
-                                        <a href="#Services" style="--i:5">Services</a>
-                                        <a href="#contact" style="--i:5">Contact</a>
-                                        <a href="#Experience" style="--i:6">Experience</a>
+                                        <a href="#Home" style="--i:1" class="active"><i class='bx bx-home'></i> Home</a>
+                                        <a href="#About" style="--i:2"><i class='bx bx-info-circle'></i> About</a>
+                                        <a href="#Skills" style="--i:3"><i class="bx bx-code-alt"></i> Skills</a>
+                                        <a href="#Projects" style="--i:4"><i class="bx bx-folder"></i> Projects</a>
+                                        <a href="#Services" style="--i:5"> <i class="bx bx-cog"></i>Services</a>
+                                        <a href="#contact" style="--i:5"><i class="bx bx-phone"></i> Contact</a>
+                                        <a href="#Experience" style="--i:6"><i class="bx bx-briefcase"></i> Experience</a>
                                     </nav>
                                 </header>
 
@@ -120,68 +125,76 @@
                                 <section id="Projects">
                                     <h1 class="subtitle">My <span>Projects</span></h1>
                                     <div class="about" id="About">
-          
+
                                         <div class="about-text">
-                                            
+
                                             <p>
-                                                I have developed a small Facebook-like application entirely by myself, handling both the backend and frontend. For the backend, I used the Laravel framework to ensure a robust and scalable system. Below is a video demo showcasing my project.
+                                                I have developed a small Facebook-like application entirely by myself,
+                                                handling both the backend and frontend. For the backend, I used the
+                                                Laravel framework to ensure a robust and scalable system. Below is a
+                                                video demo showcasing my project.
                                                 <br>
                                                 <br>
 
-                                                <a href="https://youtu.be/hrj9V_iZT1c" class="btn-box" > Video Demo</a>
+                                                <a href="https://youtu.be/hrj9V_iZT1c" class="btn-box"> Video Demo</a>
                                             </p>
-                                          
+
                                         </div>
                                         <div class="about-img2">
                                             <img src="imag/fb.png" class="abt-res2">
-                                
+
                                         </div>
-                                       
+
                                     </div>
                                 </section>
                                 <section>
-                                   
+
                                     <div class="about" id="About">
                                         <div class="about-img1">
                                             <img src="imag/point.png" class="abt-res1">
                                         </div>
                                         <div class="about-text">
-                                            
+
                                             <p>
-                                                I developed a POS system for product sales, with a focus on coffee sales.
-                                                 The system includes features for purchasing, sales transactions, daily reports, 
-                                                 and employee management. It was built using Laravel with a MySQL database. 
-                                                 Below is a demo video showcasing its functionality.
+                                                I developed a POS system for product sales, with a focus on coffee
+                                                sales.
+                                                The system includes features for purchasing, sales transactions, daily
+                                                reports,
+                                                and employee management. It was built using Laravel with a MySQL
+                                                database.
+                                                Below is a demo video showcasing its functionality.
                                                 <br>
 
-                                                <a href="https://youtu.be/Vox-kphVh38" class="btn-box" > Video Demo</a>
+                                                <a href="https://youtu.be/Vox-kphVh38" class="btn-box"> Video Demo</a>
                                             </p>
-                                          
+
                                         </div>
-                                      
+
                                     </div>
                                 </section>
                                 <section>
-                                    
+
                                     <div class="about" id="About">
-          
+
                                         <div class="about-text">
-                                            
+
                                             <p>
-                                                This is the UX/UI design I created for a food delivery app using Figma. It features an intuitive interface, seamless navigation, and essential functionalities. 
+                                                This is the UX/UI design I created for a food delivery app using Figma.
+                                                It features an intuitive interface, seamless navigation, and essential
+                                                functionalities.
                                                 Below is a demo video showcasing its capabilities.
                                                 <br>
                                                 <br>
 
                                                 <a href="https://youtu.be/bvBYE5I_L_g" class="btn-box"> Video Demo</a>
                                             </p>
-                                          
+
                                         </div>
                                         <div class="about-img2">
                                             <img src="imag/1.png" class="abt-res2">
-                                
+
                                         </div>
-                                       
+
                                     </div>
                                 </section>
                                 <row>
@@ -399,7 +412,7 @@
                                         </div>
                                     </div>
                                 </section>
-                                
+
                                 <section class="contact" id="contact">
                                     <div class="contact-text">
                                         <h2>Contact <span>Me</span></h2>
@@ -465,6 +478,13 @@
 
     </section>
     <script src="js/main.js"></script>
+    <script>
+        const menuIcon = document.getElementById("menu-icon");
+        const nav = document.getElementById("myLinks");
+        menuIcon.addEventListener("click", () => {
+            nav.classList.toggle("active");
+        })
+    </script>
 </body>
 
 </html>
