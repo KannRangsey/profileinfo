@@ -41,7 +41,7 @@ body {
 
 .navbar a {
     display: inline-block;
-    font-size: 25px;
+    font-size: 20px;
     color: #fff;
     text-decoration: none;
     font-weight: 500;
@@ -51,10 +51,47 @@ body {
     animation: slideUP .5s ease forwards;
     animation-delay: calc(.2s * var(--i));
 }
-
+.navbar a i{
+    padding: 5px;
+}
 .navbar a:hover {
     color: #0ef;
     text-decoration: underline;
+}
+.menu-icon {
+    margin-left: 15px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 35px;
+    display: none;
+}
+@media screen and (max-width: 768px) {
+    .menu-icon {
+        display: block;
+        align-items: center;
+    }
+    .header {
+        padding: 15px 3%;
+        display: flex;
+    }
+    .navbar {
+        position: absolute;
+        top: 70px;
+        left: 0px;
+        padding:10px;
+        background: #081b29;
+        transition: 0.5s;
+        z-index: 100;
+        display: none;
+        flex-direction: column;
+    }
+
+    .navbar.active {
+        left: 0;
+        display: block;
+    }
+    
+    
 }
 
 /*home*/
